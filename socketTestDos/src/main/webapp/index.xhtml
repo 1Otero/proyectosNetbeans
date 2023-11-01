@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title #{inicioController.f}</title>
+        <script>
+            var o = 0
+            var sk= new WebSocket("ws://localhost:8081/socketTestDos/server")
+            console.log("connection successfully ")
+            sk.onmessage= function(e){
+                console.log("Mensaje recibido: ")
+                console.log(e.data)
+            }
+            sk.onclose= function(e){
+                console.log("Usuario closed")
+                console.log(e)
+            }
+            sk.onerror= function(e){
+                console.log("Error socket")
+                console.log(e)
+            }
+            function sendMessage(){
+                sk.send("new message " + o.toString())
+                o++
+            }    
+        </script>
+    </h:head>
+    <h:body>
+        Hello from Facelets
+        <h:commandButton onclick="sendMessage()" value="Enviar message"/>
+        <h:commandButton title="Enviar n" value="Enviar notificacion"/>
+    </h:body>
+</html>
+

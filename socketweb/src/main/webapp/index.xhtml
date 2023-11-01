@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Hello from Facelets
+        <script>
+          ws= new WebSocket("ws://localhost:8080/socketweb/server")  
+          console.log("connect")
+          ws.onopen= (e)=> {
+              console.log(e)
+              ws.send("new client connected")
+          }
+          ws.onmessage= (e)=> {
+              console.log("***********new message****************: ")
+              console.log(e.data)
+          }
+          ws.onclose= function(e){
+              console.log("close server socket")
+              console.log(e)
+          }
+          ws.onerror= (e)=>{
+              console.log("error socket")
+              console.log(e)
+          }
+        </script>    
+    </h:body>
+</html>

@@ -1,0 +1,4 @@
+com\mycompany\socketweb\resources\controller\InicioController.class
+com\mycompany\socketweb\resources\controller\Server.class
+com\mycompany\socketweb\resources\JakartaEE10Resource.class
+com\mycompany\socketweb\JakartaRestConfiguration.class

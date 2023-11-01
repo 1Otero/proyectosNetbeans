@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+        <p>this is test</p> 
+    </body>
+    <script>
+      ws= new WebSocket("ws://localhost:8080/socketweb/server")  
+      ws.onopen= (e)=> {
+          console.log("new client")
+          ws.send("Hello new client")
+      }
+      ws.onmessage= (e)=> {
+          console.log("New message: ")
+          console.log(e.data)
+      }
+      ws.onclose= function(e){
+          console.log("Close server socket")
+      }
+      ws.onerror= (e)=> {
+          console.log("Error socket")
+          console.log(e)
+      }
+    </script>    
+</html>

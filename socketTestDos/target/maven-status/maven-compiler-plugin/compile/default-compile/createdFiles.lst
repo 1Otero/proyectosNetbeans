@@ -1,0 +1,14 @@
+com\mycompany\sockettestdos\resources\controllers\InicioController.class
+com\mycompany\sockettestdos\resources\services\ProductService.class
+com\mycompany\sockettestdos\resources\models\Product.class
+com\mycompany\sockettestdos\resources\daos\CategoryDao.class
+com\mycompany\sockettestdos\resources\AbstractFacade.class
+com\mycompany\sockettestdos\resources\ProductFacadeLocal.class
+com\mycompany\sockettestdos\resources\services\CategoryService.class
+com\mycompany\sockettestdos\resources\serverSocket.class
+com\mycompany\sockettestdos\resources\exceptions\IllegalOrphanException.class
+com\mycompany\sockettestdos\resources\exceptions\PreexistingEntityException.class
+com\mycompany\sockettestdos\resources\models\Category_Products.class
+com\mycompany\sockettestdos\resources\ProductFacade.class
+com\mycompany\sockettestdos\resources\exceptions\NonexistentEntityException.class
+com\mycompany\sockettestdos\resources\models\Category.class
